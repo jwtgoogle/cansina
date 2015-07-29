@@ -1,4 +1,28 @@
-Cansina
+Cansina是一款用于发现网站的敏感目录和内容的安全测试工具，通过分析服务器的响应进行探测并使用sqlite保证数据持久性。
+特性
+         多线程
+         HTTP/S 代理支持
+         数据持久性 (sqlite3)
+         多后缀支持 (-e php,asp,aspx,txt…)
+         网页内容识别 (will watch for a specific string inside web page content)
+         跳过假404错误
+         可跳过被过滤的内容
+         报表功能
+         基础认证
+         Cansina
+参数说明：
+         -u:为你的url地址-p：是的自己的路径文件或者fuzzdb都行。自己定义。cansina.py -u target_site_url -p payload_filename
+         -b：禁止的响应代码如果404 400 500cansina.py -u target_site_url -p payload_filename -b 404,400,500
+         -e：简单点，只扫php扩展。
+         cansina.py -u target_site_url -p payload_filename -e php
+         -e：这个同上你懂的。
+         cansina.py -u target_site_url -p payload_filename -e php,asp,aspx
+         -c：在网页中查找一些关键字。也可以添加多个关键字。
+         cansina.py -u target_site_url -p payload_filename -c look_for_this_text
+         -d：就是查看文件中是否有要找的字符，如果没有将自动返回404特征码。
+         cansina.py -u target_site_url -p payload_filename -d look_for_this_text
+         自动检查并返回特定的404 200等
+         cansina.py -u target_site_url -p payload_filename -D
 =======
 
 Cansina is a Web Content Discovery Application.
